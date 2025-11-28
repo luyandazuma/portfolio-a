@@ -25,6 +25,19 @@ body.dark-mode {
   color: white;
 }
 
+.section-header {
+  min-height: 85vh;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease-in-out;
+}
+
+.section-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section {
   min-height: 80vh;
   padding: 4rem 2rem;
