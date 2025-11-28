@@ -30,3 +30,39 @@ function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   section.scrollIntoView({ behavior: "smooth" });
 }
+
+// animations
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -100px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+
+      // Animate skill bars
+      if (entry.target.id === "skills") {
+        const skillBars = entry.target.querySelectorAll(".skill-progress");
+        skillBars.forEach((bar, index) => {
+          setTimeout(() => {
+            bar.style.width = bar.style.width;
+          }, index * 100);
+        });
+      }
+
+// update active nav link
+navLinks.forEach((link) => {
+        if (link.getAttribute("data-section") === entry.target.id) {
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
