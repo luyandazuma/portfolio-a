@@ -27,10 +27,10 @@ body.dark-mode {
 
 .section-header {
   min-height: 85vh;
-  padding: 4rem 2rem;
+  padding: 4rem 3rem;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease-in-out;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .section-header.visible {
@@ -57,9 +57,10 @@ body.dark-mode {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 10px;
   position: sticky;
   top: 0;
+  bottom: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease;
