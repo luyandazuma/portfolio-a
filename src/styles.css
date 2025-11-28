@@ -1,0 +1,336 @@
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: oklch(0.95 0.052 163.051);
+  color: rgb(15 23 42);
+}
+
+body.dark-mode {
+  background-color: oklch(0.262 0.051 172.552);
+  color: white;
+}
+
+.section {
+  min-height: 80vh;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
+}
+
+.light-mode .nav-tabs {
+  background-color: #a4f4cf9c;
+}
+
+.dark-mode .nav-tabs {
+  background-color: #00604579;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.light-mode .nav-link {
+  color: #0f172b;
+}
+
+.dark-mode .nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.light-mode .nav-link:hover {
+  background-color: rgba(15, 23, 42, 0.1);
+}
+
+.dark-mode .nav-link:hover {
+  background-color: #00d49172;
+}
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+.light-mode .nav-link.active {
+  background-color: rgba(15, 23, 42, 0.15);
+}
+
+.dark-mode .nav-link.active {
+  background-color: #00d49172;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.light-mode .profile-picture {
+  border-color: oklch(0.979 0.021 166.113);
+}
+
+.dark-mode .profile-picture {
+  border-color: oklch(0.262 0.051 172.552);
+}
+
+.profile-picture-container {
+  display: inline-block;
+  position: relative;
+  padding: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.profile-picture-container:hover .profile-picture {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  margin: 15px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  display: inline-block;
+}
+
+.light-mode .btn-primary {
+  background-color: rgb(15 23 42);
+  color: white;
+  border-color: rgb(15 23 42);
+}
+
+.dark-mode .btn-primary {
+  background-color: white;
+  color: rgb(15 23 42);
+  border-color: white;
+}
+
+.light-mode .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  color: rgb(15 23 42);
+  border: none;
+}
+
+.dark-mode .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #00d492;
+  border: none;
+}
+
+.skill-card {
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+.project-card,
+.experience-card,
+.education-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.light-mode .skill-card,
+.light-mode .project-card,
+.light-mode .experience-card,
+.light-mode .education-card {
+  background-color: #dcfce7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .skill-card,
+.dark-mode .project-card,
+.dark-mode .experience-card,
+.dark-mode .education-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover,
+.project-card:hover,
+.experience-card:hover,
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.light-mode .theme-toggle {
+  background-color: rgb(15 23 42);
+}
+
+.dark-mode .theme-toggle {
+  background-color: white;
+}
+
+.theme-toggle-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  transition: all 0.3s ease;
+}
+
+.light-mode .theme-toggle-circle {
+  background-color: white;
+  left: 3px;
+}
+
+.dark-mode .theme-toggle-circle {
+  background-color: rgb(15 23 42);
+  left: 33px;
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.light-mode .education-link:hover {
+  color: #007a55;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode .education-link:hover {
+  color: #00d492;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-link {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.light-mode .contact-link {
+  background-color: rgba(15, 23, 42, 0.05);
+  color: rgb(15 23 42);
+}
+
+.dark-mode .contact-link {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.contact-link:hover {
+  transform: scale(1.05);
+}
+
+.light-mode .contact-link:hover {
+  background-color: rgba(15, 23, 42, 0.1);
+}
+
+.dark-mode .contact-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
