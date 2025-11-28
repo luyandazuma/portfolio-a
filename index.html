@@ -110,6 +110,46 @@
         .dark-mode .nav-link.active {
             background-color: #00d49172;
         }
+
+        .btn-primary {
+            margin: 15px;
+            padding: 0.75rem 1.5rem;
+            border-radius:10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        .light-mode .btn-primary {
+            background-color: rgb(15 23 42);
+            color: white;
+            border-color: rgb(15 23 42);
+        }
+
+        .dark-mode .btn-primary {
+            background-color: white;
+            color: rgb(15 23 42);
+            border-color: white;
+        }
+
+        .light-mode .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            color:rgb(15 23 42);
+            border: none;
+        }
+
+        .dark-mode .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: #00d492;
+            border: none;
+
+        }
+
     </style>
 </head>
 <body class="light-mode">
@@ -135,5 +175,21 @@
             </div>
         </div>
     </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section visible">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-6xl font-bold mb-6 fade-in-up"><span class="typing-text">Hi, I'm Luyanda Zuma</span></h1>
+            <p class="text-2xl mb-8 fade-in-up" style="animation-delay: 0.2s;">Aspiring Cloud Engineer</p>
+            <p class="text-lg mb-12 fade-in-up max-w-2xl mx-auto" style="animation-delay: 0.4s;">
+                I craft beautiful, responsive web experiences with modern technologies. 
+                Passionate about clean code and innovative solutions.
+            </p>
+            <div class="fade-in-up" style="animation-delay: 0.6s;">
+                <button class="btn-primary" onclick="scrollToSection('projects')">Projects</button>
+                <button class="btn-primary" onclick="scrollToSection('experience')">Experience</button>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
